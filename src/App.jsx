@@ -7,7 +7,7 @@ import { Underscore } from './Components/Underscore'
 
 
 function App() {
-  const { targetWord, guessedLetters, hint, guess, guessedWord, setNewTargetWord, incorrectGuesses } = useGame()
+  const { targetWord, guessedLetters, hint, guess, guessedWord, setNewTargetWord, incorrectGuesses, theme } = useGame()
 
   const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
   useEffect(() => {
@@ -25,8 +25,7 @@ function App() {
       {!hintStatus && (<div>
         {hint}
       </div>)}
-
-      {targetWord.length}
+      {theme}
       <Stack direction='horizontal'>
         <Underscore word={guessedWord} />
       </Stack>
